@@ -57,19 +57,20 @@ body.sheet-darkmode button {
 
 
 
-input[type='checkbox'] {
+button.checkbox {
     background-color: white !important;
-    width: 14px !important;
-    height: 14px !important;
+    width: 12px !important;
+    height: 12px !important;
     border-radius: 3px;
     border: 1px #3F3F3F solid;
+    padding: 0px;
 }
-body.sheet-darkmode input[type='checkbox'] {
+body.sheet-darkmode button.checkbox {
     border-color: black;
 }
-/* input[type='checkbox'] {
-    background-color: #0075FF;
-} */
+body.sheet-darkmode button.checkbox.checked {
+    border-color: #0075FF;
+}
 
 
 div.single-line-holder {
@@ -463,7 +464,7 @@ div.sheet-template-container {
     top: 4px;
     left: 5px;
     padding: 3px;
-    padding-left; 3px;
+    padding-left: 3px;
 }
 
 #character_box > div > input {
