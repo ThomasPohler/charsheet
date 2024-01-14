@@ -1,0 +1,21 @@
+- Fixed issue where shield bonus was doubling up.
+
+- Finished sidebar collapse feature.
+
+- Replaced techniques with the most recent version.
+
+- Changed "LETHAL" to "BRUTAL" in the attack section.
+
+- Began organizing sidebar CSS rules.
+
+- Restyled how the trait buttons looked when you have trait (dis)advantage.
+
+- Gave light mode's styling some love. I had previously been neglecting it since I'm not sure if anyone is using light mode in Roll20 in our campaigns.
+
+- Trait (dis)advantage is now visible as a tint in the respective trait button's background color.
+
+- Fixed visual errors that would appear briefly when switching from light mode to dark mode.
+
+- Added a horizontal line between the attacks and defensive actions. Previously, there was just a blank space.
+
+- 
