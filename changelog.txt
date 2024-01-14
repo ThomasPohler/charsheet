@@ -20,4 +20,4 @@
 
 - Built a new method of handling checkboxes that's more flexible.
 
-- 
+- Made the sidebar collapse animations much smoother.

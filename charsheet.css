@@ -69,7 +69,7 @@ body.sheet-darkmode button.checkbox {
     border-color: black;
 }
 body.sheet-darkmode button.checkbox.checked {
-    border-color: #0075FF;
+    background-color: #0075FF;
 }
 
 
@@ -282,20 +282,25 @@ body.sheet-darkmode input.advantaged-trait {
 }
 
 .sheet-main #left_sidebar .left-sidebar-input-holder {
-    transition: 0s;
+    transition: all 0.3s;
     display: inline;
-}
-.sheet-main #left_sidebar.collapsed .left-sidebar-input-holder {
-    opacity: 0%;
-    position: absolute;
-}
-.sheet-main #left_sidebar .left-sidebar-input-holder > input {
-    transition: all 0.3s, background-color 0s, border-color 0s, color 0s;
+    position: relative;
     width: 3.5em;
     margin-right: 2px;
 }
+.sheet-main #left_sidebar.collapsed .left-sidebar-input-holder {
+    width: 0em;
+    margin-right: 0px;
+} 
+.sheet-main #left_sidebar .left-sidebar-input-holder > input {
+    transition: all 0.3s, background-color 0s, border-color 0s, color 0s;
+    width: 3.5em;
+    position: absolute;
+}
 .sheet-main #left_sidebar.collapsed .left-sidebar-input-holder > input {
     width: 0em;
+    pointer-events: none;
+    opacity: 0%;
 }
 
 .sheet-main #left_sidebar .skill-container {
