@@ -225,6 +225,7 @@ body.sheet-darkmode .sheet-main #title {
     padding-bottom: 0px;
     border-top: 0px;
     border-bottom: 0px;
+    margin-bottom: 0px;
     height: 0px;
     transition: all 0.3s, opacity 0.3s, border-width 0.3s, background-color 0s, border-color 0s;
     opacity: 0%;

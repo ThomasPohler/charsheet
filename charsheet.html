@@ -2079,11 +2079,11 @@
         getAttrs(["character_box_view_storage"], function(values) {
             if(parseInt(values.character_box_view_storage) === 1){
                 $20("#character_box").addClass("invis");
-                $20("#character_box_checkbox").removeClass("checked");
+                $20("#character_box_checkbox").addClass("checked");
                 $20("#character_box_collapsed").addClass("checked");
             } else {
                 $20("#character_box").removeClass("invis");
-                $20("#character_box_checkbox").addClass("checked");
+                $20("#character_box_checkbox").removeClass("checked");
                 $20("#character_box_collapsed").removeClass("checked");
             }
             if(info.trigger_name !== "sheet:opened"){
