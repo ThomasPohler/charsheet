@@ -24,6 +24,12 @@
 
 - Made the sidebar collapse animations much smoother.
 
-- Shrunk the title of the character sheet to better fit onto the top "line" of divs
+- Shrunk the title of the character sheet to better fit onto the top "line" of divs.
 
 - The character box can now be collapsed to the top left.
+
+- Fixed an issue where none of the text in the character box was readable in light mode.
+
+- Fixed an issue where the collapsible parts of the character sheet would toggle their size each time the sheet was opened.
+
+- Fixed an issue where the level-up tab was gone.
