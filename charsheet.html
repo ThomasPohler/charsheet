@@ -2065,7 +2065,7 @@
                 $20("#left_sidebar").removeClass("collapsed");
                 $20("#left_sidebar_view").removeClass("checked");
             }
-            if(info.trigger_name !== "sheet:opened"){
+            if(info.triggerName !== "sheet:opened"){
                 setAttrs({
                     left_sidebar_view_storage: (parseInt(values.left_sidebar_view_storage) === 1 ? 0 : 1)
                 });
@@ -2075,7 +2075,6 @@
 
     /* Handles the character box collapsible buttons */
     on('clicked:character_box_view_col sheet:opened', (info) => {
-        console.log(info);
         getAttrs(["character_box_view_storage"], function(values) {
             if(parseInt(values.character_box_view_storage) === 1){
                 $20("#character_box").addClass("invis");
@@ -2086,7 +2085,7 @@
                 $20("#character_box_checkbox").removeClass("checked");
                 $20("#character_box_collapsed").removeClass("checked");
             }
-            if(info.trigger_name !== "sheet:opened"){
+            if(info.triggerName !== "sheet:opened"){
                 setAttrs({
                     character_box_view_storage: (parseInt(values.character_box_view_storage) === 1 ? 0 : 1)
                 });
