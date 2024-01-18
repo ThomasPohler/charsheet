@@ -12,6 +12,8 @@
 
 - Gave light mode's styling some love. I had previously been neglecting it since I'm not sure if anyone is using light mode in Roll20 in our campaigns.
 
+- Made the collapsed sidebar even thinner.
+
 - Trait (dis)advantage is now visible as a tint in the respective trait button's background color.
 
 - Fixed visual errors that would appear briefly when switching from light mode to dark mode.
@@ -21,3 +23,7 @@
 - Built a new method of handling checkboxes that's more flexible.
 
 - Made the sidebar collapse animations much smoother.
+
+- Shrunk the title of the character sheet to better fit onto the top "line" of divs
+
+- The character box can now be collapsed to the top left.

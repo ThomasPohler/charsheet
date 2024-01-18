@@ -40,7 +40,7 @@
         <div class="container-style sidebar-small">
     		<h4 class="expanded">&#62;&#60;</h4> <!-- contains "><" -->
             <h4 class="collapsed">&#60;&#62;</h4> <!-- contains "<>" -->
-            <input type="hidden" name="attr_left_sidebar_view_storage" value="0" />
+            <input type="hidden" name="attr_left_sidebar_view_storage" value="0"/>
             <button id="left_sidebar_view" class="top-right checkbox" type="action" name="act_left_sidebar_view"></button>
     	</div>
         
@@ -319,48 +319,56 @@
     
     <!-- Main div containing everything else -->
     <div id="main_div">
-    
-        <div style="width: 800px; text-align: center; margin-bottom: 6px;">
-            <h1>Legends Unbound Character Sheet</h1>
-        </div>    
+        
+        <input type="hidden" name="attr_character_box_view_storage" value="0" />
+        <div id="character_box_collapsed" class="container-style sidebar-small">
+            <button id="character_box_checkbox" class="checkbox" type="action" name="act_character_box_view_col"></button>
+            <input type="text" name="attr_character_name" />
+        </div>
 
+        <div id="title_holder">
+            <div id="title">Legends Unbound Character Sheet</div>
+        </div>
+        
         <!-- Section containing information about the character -->
         <div id="character_box" class="container-style">
             <div>
-                <h4>Name:</h4>
+                <span>NAME</span>
+                <input type="text" name="attr_character_name"/>
             </div>
+            <div class="vr"></div>
             <div>
-                <input type="text" name="attr_character_name" />
+                <span>SPECIES</span>
+                <input type="text" name="attr_character_species" />
             </div>
+            <div class="vr"></div>
             <div>
-                <h4>Size:</h4>
+                <span>GENDER</span>
+                <input type="text" name="attr_character_gender" />
             </div>
+            <div class="vr"></div>
             <div>
-                <input type="text" name="attr_character_size" />
-            </div>
-            <div>
-                <h4>Player:</h4>
-            </div>
-            <div>
+                <span>PLAYER</span>
                 <input type="text" name="attr_character_player" />
             </div>
             <div>
-                <h4>Species:</h4>
-            </div>
-            <div>
-                <input type="text" name="attr_character_species" />
-            </div>
-            <div>
-                <h4>Class:</h4>
-            </div>
-            <div>
-                <input type="text" name="attr_character_class" />
-            </div>
-            <div>
-                <h4>Background:</h4>
-            </div>
-            <div>
+                <span>BACKGROUND</span>
                 <input type="text" name="attr_character_background" />
+            </div>
+            <div class="vr"></div>
+            <div>
+                <span>AGE</span>
+                <input type="text" name="attr_character_age" />
+            </div>
+            <div class="vr"></div>
+            <div>
+                <span>SIZE</span>
+                <input type="text" name="attr_character_size" />
+            </div>
+            <div class="vr"></div>
+            <div>
+                <span>CLASS(ES)</span>
+                <input type="text" name="attr_character_class" />
             </div>
         </div>
         
@@ -2038,15 +2046,7 @@
         });
     });
     
-    /* Controls the ability to hide the description in the ability trackers */
-    on('clicked:repeating_ability:abilitytrackertextbutton', function() {
-        getAttrs(["repeating_ability_abilityTextToggle"], function(values) {
-            let val = (values.repeating_ability_abilityTextToggle == "1" ? "0" : "1");
-            setAttrs({
-                repeating_ability_abilityTextToggle: val
-            });
-        });
-    });
+    
     
 
 
@@ -2065,9 +2065,32 @@
                 $20("#left_sidebar").removeClass("collapsed");
                 $20("#left_sidebar_view").removeClass("checked");
             }
-            setAttrs({
-                left_sidebar_view_storage: (parseInt(values.left_sidebar_view_storage) === 1 ? 0 : 1)
-            });
+            if(info.trigger_name !== "sheet:opened"){
+                setAttrs({
+                    left_sidebar_view_storage: (parseInt(values.left_sidebar_view_storage) === 1 ? 0 : 1)
+                });
+            }
+        });
+    });
+
+    /* Handles the character box collapsible buttons */
+    on('clicked:character_box_view_col sheet:opened', (info) => {
+        console.log(info);
+        getAttrs(["character_box_view_storage"], function(values) {
+            if(parseInt(values.character_box_view_storage) === 1){
+                $20("#character_box").addClass("invis");
+                $20("#character_box_checkbox").removeClass("checked");
+                $20("#character_box_collapsed").addClass("checked");
+            } else {
+                $20("#character_box").removeClass("invis");
+                $20("#character_box_checkbox").addClass("checked");
+                $20("#character_box_collapsed").removeClass("checked");
+            }
+            if(info.trigger_name !== "sheet:opened"){
+                setAttrs({
+                    character_box_view_storage: (parseInt(values.character_box_view_storage) === 1 ? 0 : 1)
+                });
+            }
         });
     });
     
@@ -2076,6 +2099,10 @@
 
     
     
+
+
+
+
     on("change:advan_and_mod_loadout sheet:opened", function() {
         getAttrs(["advan_and_mod_loadout"], function(values) {
             let val = parseInt(values.advan_and_mod_loadout);
@@ -2094,6 +2121,27 @@
         });
     });
     
+    /* Controls the ability to hide the description in the ability trackers */
+    on('clicked:repeating_ability:abilitytrackertextbutton', function() {
+        getAttrs(["repeating_ability_abilityTextToggle"], function(values) {
+            let val = (values.repeating_ability_abilityTextToggle == "1" ? "0" : "1");
+            setAttrs({
+                repeating_ability_abilityTextToggle: val
+            });
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
     
     on("change:tolerance2 change:tolerance_armor_caustic change:tolerance_shield_caustic change:armor_tolerance_apply change:shield_tolerance_apply sheet:opened", function() {  
         getAttrs(["tolerance2","tolerance_armor_caustic","tolerance_shield_caustic","armor_tolerance_apply","shield_tolerance_apply"], function(values) {

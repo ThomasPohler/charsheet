@@ -30,6 +30,11 @@ body.sheet-darkmode .tab-pane {
     display: none;
 }
 
+.invis {
+    pointer-events: none;
+    cursor: default;
+}
+
 
 
 button {
@@ -64,12 +69,13 @@ button.checkbox {
     border-radius: 3px;
     border: 1px #3F3F3F solid;
     padding: 0px;
+    display: inline;
 }
 body.sheet-darkmode button.checkbox {
     border-color: black;
 }
-body.sheet-darkmode button.checkbox.checked {
-    background-color: #0075FF;
+button.checkbox.checked {
+    background-color: #0075FF !important;
 }
 
 
@@ -108,7 +114,17 @@ body.sheet-darkmode .container-style {
     margin-bottom: 8px;
 }
 body.sheet-darkmode .hr {
-    background-color: #B3B3B3;
+    background-color: #4C4C4C;
+}
+
+.vr {
+    background-color: #666666;
+    height: 50px;
+    width: 1px;
+    margin: 0px auto;
+}
+body.sheet-darkmode .vr {
+    background-color: #4C4C4C;
 }
 
 
@@ -161,26 +177,6 @@ body.sheet-darkmode .hr {
  /* PAGE: MAIN */
 /**************/
 
-
-
-/* ADVAN AND MOD LOADOUTS */
-.advmod-loadout-0,
-.advmod-loadout-1,
-.advmod-loadout-2,
-.advmod-loadout-3,
-.advmod-loadout-4 {
-    display: none;
-}
-.advmodloadout-tabstoggle[value="0"] ~ div > .advmod-loadout-0,
-.advmodloadout-tabstoggle[value="1"] ~ div > .advmod-loadout-1,
-.advmodloadout-tabstoggle[value="2"] ~ div > .advmod-loadout-2,
-.advmodloadout-tabstoggle[value="3"] ~ div > .advmod-loadout-3,
-.advmodloadout-tabstoggle[value="4"] ~ div > .advmod-loadout-4 {
-    display: block;
-}
-
-
-
 /* MAIN DIV */
 
 .sheet-main #main_div {
@@ -191,6 +187,76 @@ body.sheet-darkmode .hr {
 }
 .sheet-main #left_sidebar.collapsed ~ #main_div {
     margin-left: 64px;
+}
+
+
+
+.sheet-main #title_holder {
+    width: 800px;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.sheet-main #title {
+    font-size: 26px;
+    line-height: 25px;
+    text-decoration-line: overline underline;
+    margin-top: 5px;
+    color: #333;
+}
+body.sheet-darkmode .sheet-main #title {
+    color: #E6E6E6;
+}
+
+
+
+.sheet-main #character_box {
+    display: grid;
+    grid-template-columns: 190px 1fr 190px 1fr 190px 1fr 190px;
+    grid-template-rows: repeat(2, auto);
+    padding: 3px;
+    position: relative;
+    transition: all 0.3s, opacity 0s, border-width 0.15s, background-color 0s, border-color 0s;
+    height: 100px;
+    overflow: hidden;
+}
+.sheet-main #character_box.invis {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    height: 0px;
+    transition: all 0.3s, opacity 0.3s, border-width 0.3s, background-color 0s, border-color 0s;
+    opacity: 0%;
+}
+.sheet-main #character_box input {
+    width: 100%;
+}
+.sheet-main #character_box span {
+    margin: 0px auto;
+    color: #333333;
+    width: 1px;
+    display: flex;
+    justify-content: center;
+}
+body.sheet-darkmode .sheet-main #character_box span {
+    color: #E6E6E6;
+}
+
+.sheet-main #character_box_collapsed {
+    position: absolute;
+    padding-left: 0px;
+    width: 23px;
+    transition: all 0.25s, opacity 0s, background-color 0s, border-color 0s;
+}
+.sheet-main #character_box_collapsed.checked {
+    width: 183px;
+}
+.sheet-main #character_box_collapsed input {
+    position: relative;
+    left: 6px;
+    bottom: 6px;
+    height:26px
 }
 
 
@@ -227,10 +293,15 @@ body.sheet-darkmode .hr {
     margin-top: 3px;
     margin-right: 3px;
 }
+.sidebar-small button.checkbox {
+    margin-top: 3px;
+}
+.sidebar-small > button.checkbox:first-child {
+    margin-left: 6px;
+}
 .sidebar-small button.checkbox.top-right {
     float: right;
     margin-right: 3px;
-    margin-top: 3px;
 }
 
 
@@ -343,6 +414,25 @@ body.sheet-darkmode input.advantaged-trait {
 
 
 
+/* ADVAN AND MOD LOADOUTS */
+
+.advmod-loadout-0,
+.advmod-loadout-1,
+.advmod-loadout-2,
+.advmod-loadout-3,
+.advmod-loadout-4 {
+    display: none;
+}
+.advmodloadout-tabstoggle[value="0"] ~ div > .advmod-loadout-0,
+.advmodloadout-tabstoggle[value="1"] ~ div > .advmod-loadout-1,
+.advmodloadout-tabstoggle[value="2"] ~ div > .advmod-loadout-2,
+.advmodloadout-tabstoggle[value="3"] ~ div > .advmod-loadout-3,
+.advmodloadout-tabstoggle[value="4"] ~ div > .advmod-loadout-4 {
+    display: block;
+}
+
+
+
 
 
 
@@ -412,7 +502,6 @@ body.sheet-darkmode input[readonly='true']{
 /* Page elements */
 /*****************/
 
-h1    {display:inline;text-decoration-line:overline underline;}
 h4    {display:inline;}
 li    {margin-bottom:5px;}
 
@@ -456,24 +545,6 @@ div.sheet-template-container {
     left:0;
     top:50px;
     z-index:-1;
-}
-
-#character_box {
-    display: grid;
-    grid-template-columns: 75px 1fr 55px 1fr 95px 1fr;
-    grid-template-rows: repeat(2, auto);
-}
-
-#character_box > div > h4 {
-    position: relative;
-    top: 4px;
-    left: 5px;
-    padding: 3px;
-    padding-left: 3px;
-}
-
-#character_box > div > input {
-    width: 100%;
 }
 
 #advan_and_mod_box {
