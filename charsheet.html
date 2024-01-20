@@ -1,5 +1,5 @@
 <!-- Roll20 character sheet created by Thomas Pohler -->
-<!-- For the TTRPG Legends Unbound, created by Kurt Knudsen and co-created by Thomas Pohler -->
+<!-- for the TTRPG Legends Unbound, created by Kurt Knudsen and co-created by Thomas Pohler -->
 
 
 
@@ -14,8 +14,8 @@
 <!------------>
 
 <!-- Controls which page is currently active -->
-<input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="main" />
-<div style="margin-bottom:10px;">
+<input type="hidden" name="attr_sheetTab" value="main" />
+<div id="tab_holder">
     <button type="action" name="act_main">Character</button>
     <button type="action" name="act_level">Level-Up</button>
     <button type="action" name="act_gear">Gear</button>
@@ -27,10 +27,10 @@
 
 
 
-<!---------------->
-<!-- PAGE: MAIN -->
-<!---------------->
-<div class="sheet-main">
+    <!---------------->
+    <!-- PAGE: MAIN -->
+    <!---------------->
+    <div class="sheet-main"> <!-- TPTODO fix identation -->
     
     
     
@@ -48,7 +48,7 @@
         <div class="container-style sidebar-small">
     		<h4 class="expanded">FD-Only Roll</h4>
             <h4 class="collapsed">FD</h4>
-            <input type="checkbox" name="attr_gm_roll" value="0">
+            <input type="checkbox" name="attr_gm_roll" value="0" style="top: 3px; margin-right: 6px;"> <!--TPTODO-->
     	</div>
         
         <!-- TRAIT: AWARENESS -->
@@ -56,7 +56,7 @@
     		<h4 class="expanded">Awareness</h4>
             <h4 class="collapsed">AWR</h4>
     		
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_detection_mod_ui" class="detection" step="1" value="0" readonly="true"/>
                 </div>
@@ -65,7 +65,7 @@
                     <span class="collapsed">DET</span>
                 </button>
             </div>
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_intuition_mod_ui" class="intuition" step="1" value="0" readonly="true"/>
                 </div>
@@ -74,7 +74,7 @@
                     <span class="collapsed">INT</span>
                 </button>
     		</div>
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_wilderness_mod_ui" class="wilderness" step="1" value="0" readonly="true"/>
                 </div>
@@ -90,7 +90,7 @@
     		<h4 class="expanded">Charisma</h4>
             <h4 class="collapsed">CHA</h4>
     		
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_convince_mod_ui" class="convince" step="1" value="0" readonly="true"/>
                 </div>
@@ -99,7 +99,7 @@
                     <span class="collapsed">CON</span>
                 </button>
     		</div>
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_flair_mod_ui" class="flair" step="1" value="0" readonly="true"/>
                 </div>
@@ -108,7 +108,7 @@
                     <span class="collapsed">FLA</span>
                 </button>
     		</div>
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_performance_mod_ui" class="performance" step="1" value="0" readonly="true"/>
                 </div>
@@ -124,7 +124,7 @@
     		<h4 class="expanded">Conviction</h4>
             <h4 class="collapsed">CNV</h4>
     		
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_faith_mod_ui" class="faith" step="1" value="0" readonly="true"/>
                 </div>
@@ -133,7 +133,7 @@
                     <span class="collapsed">FAI</span>
                 </button>
     		</div>
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_interaction_mod_ui" class="interaction" step="1" value="0" readonly="true"/>
                 </div>
@@ -142,7 +142,7 @@
                     <span class="collapsed">INT</span>
                 </button>
     		</div>
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_willpower_mod_ui" class="willpower" step="1" value="0" readonly="true"/>
                 </div>
@@ -158,7 +158,7 @@
     		<h4 class="expanded">Coordination</h4>
             <h4 class="collapsed">COR</h4>
     		
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_agility_mod_ui" class="agility" step="1" value="0" readonly="true"/>
                 </div>
@@ -167,7 +167,7 @@
                     <span class="collapsed">AGI</span>
                 </button>
             </div>
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_dexterity_mod_ui" class="dexterity" step="1" value="0" readonly="true"/>
                 </div>
@@ -176,7 +176,7 @@
                     <span class="collapsed">DEX</span>
                 </button>
             </div>
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_stealth_mod_ui" class="stealth" step="1" value="0" readonly="true"/>
                 </div>
@@ -192,7 +192,7 @@
     		<h4 class="expanded">Endurance</h4>
             <h4 class="collapsed">END</h4>
             
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_constitution_mod_ui" class="constitution" step="1" value="0" readonly="true"/>
                 </div>
@@ -201,7 +201,7 @@
                     <span class="collapsed">CON</span>
                 </button>
             </div>
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_persistence_mod_ui" class="persistence" step="1" value="0" readonly="true"/>
                 </div>
@@ -210,7 +210,7 @@
                     <span class="collapsed">PER</span>
                 </button>
             </div>
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_toughness_mod_ui" class="toughness" step="1" value="0" readonly="true"/>
                 </div>
@@ -226,7 +226,7 @@
     		<h4 class="expanded">Intelligence</h4>
             <h4 class="collapsed">INT</h4>
             
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_engineering_mod_ui" class="engineering" step="1" value="0" readonly="true"/>
                 </div>
@@ -235,7 +235,7 @@
                     <span class="collapsed">ENG</span>
                 </button>
             </div>
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_knowledge_mod_ui" class="knowledge" step="1" value="0" readonly="true"/>
                 </div>
@@ -244,7 +244,7 @@
                     <span class="collapsed">KNO</span>
                 </button>
             </div>
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_magic_mod_ui" class="magic" step="1" value="0" readonly="true"/>
                 </div>
@@ -260,7 +260,7 @@
     		<h4 class="expanded">Power</h4>
             <h4 class="collapsed">PWR</h4>
     		
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_grip_mod_ui" class="grip" step="1" value="0" readonly="true"/>
                 </div>
@@ -269,7 +269,7 @@
                     <span class="collapsed">GRI</span>
                 </button>
             </div>
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input type="number" name="attr_physicality_mod_ui" class="physicality" step="1" value="0" readonly="true"/>
                 </div>
@@ -278,7 +278,7 @@
                     <span class="collapsed">PHY</span>
                 </button>
             </div>
-            <div class="single-line-holder">
+            <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
                     <input class="presence" type="number" name="attr_presence_mod_ui" class="presence" step="1" value="0" readonly="true"/>
                 </div>
@@ -322,8 +322,13 @@
         
         <input type="hidden" name="attr_character_box_view_storage" value="0" />
         <div id="character_box_collapsed" class="container-style sidebar-small">
-            <button id="character_box_checkbox" class="checkbox" type="action" name="act_character_box_view_col"></button>
+            <button id="character_box_checkbox" class="checkbox" type="action" name="act_character_box_view_col"></button> <!--TPTODO remove "col"-->
             <input type="text" name="attr_character_name" />
+        </div>
+
+        <input type="hidden" name="attr_loadout_view_storage" value="0" />
+        <div id="loadout_collapsed" class="container-style sidebar-small">
+            <button id="loadout_checkbox" class="checkbox" type="action" name="act_loadout_view"></button>
         </div>
 
         <div id="title_holder">
@@ -1046,16 +1051,16 @@
     <div id="right_sidebar">
         
         <div class="container-style sidebar-small">
-    	    <h4 style="margin:0px; margin-bottom:3px; text-align:center">Level</h4>
-    	    <input type="number" name="attr_level" style="float:right;" value="1"/>
+    	    <span>Level</span>
+    	    <input type="number" name="attr_level" value="1"/>
     	</div>
     	<div class="container-style sidebar-small">
-    	    <h4 style="margin:0px; margin-bottom:3px; text-align:center">Fatigue</h4>
-    	    <input type="number" name="attr_fatigue" style="float:right;" value="0"/>
+    	    <span>Fatigue</span>
+    	    <input type="number" name="attr_fatigue" value="0"/>
     	</div>
     	<div class="container-style sidebar-small">
-    	    <h4 style="margin:0px; margin-bottom:3px; text-align:center">Gold</h4>
-    	    <input type="number" name="attr_wealth" style="float:right; width:105px;" value="0"/>
+    	    <span>Gold</span>
+    	    <input type="number" name="attr_wealth" value="0"/>
     	</div>
     	
     	<fieldset class="repeating_ability">
@@ -1065,11 +1070,9 @@
                 <input type="number" name="attr_abilitytracker_num" style="width:70px;"/>
                 <input type="number" name="attr_abilitytracker_max" style="width:70px;"/>
                 <div style="width:163px; height:3px; margin-top:2px; margin-bottom:2px; background-color:#B3B3B3; border-radius:5px;">
-                    <button type="action" name="act_abilitytrackertextbutton" style="padding:0px; margin:0px auto; width:22px; height:17px; border-radius:10px; background-color:#B3B3B3; position:relative; bottom:9px; left:70px;"></button>
+                    <button type="action" name="act_abilitytrackertextbutton" style="display: none; padding:0px; margin:0px auto; width:22px; height:17px; border-radius:10px; background-color:#B3B3B3; position:relative; bottom:9px; left:70px;"></button>
                 </div>
-                <span class="plus-sign" style="pointer-events:none; position:absolute; color:#333333; font-size:22px; margin-left: 75px; top: 48px">+</span>
-                <span class="minus-sign" style="pointer-events:none; position:absolute; color:#333333; font-size:22px; margin-left: 78px; top: 46px">-</span>
-                <textarea class="text-box" name="attr_abilitytracker_textbox" style="width: 153px; margin: 0px;"></textarea> 
+                <textarea class="text-box" name="attr_abilitytracker_textbox" style="width: 135px; margin: 0px;"></textarea> 
         	</div>
         </fieldset>
     </div>
@@ -1079,7 +1082,7 @@
     
     
     <!-- Div containing level-up information -->
-    <div class="sheet-level">
+    <div class="sheet-level hidden">
         <div style="display: grid; grid-template-columns: repeat(3, auto); width: 475px;">
             <div class="container-style sidebar-small" style="padding-bottom: 10px; width: 250px;">
         		<h4>Remaining Combat Essence</h4>
@@ -1509,7 +1512,7 @@
     	<input type="number" name="attr_language_lu" step="1" value="0"/>
     </div>
     
-    <div class="sheet-gear">
+    <div class="sheet-gear hidden">
         <!-- Totals -->
         <div class="container-style">
             <div style="text-align: center;">
@@ -1728,7 +1731,7 @@
         </div>
     </div>
 
-    <div class="sheet-cheatsheet">
+    <div class="sheet-cheatsheet hidden">
         <div class="container-style" style="padding: 5px; margin-bottom:6px;">
     		<p>Simple techniques cost a tactical action. Advanced techniques cost a tactical action and 2 MP.</p>
     	</div>
@@ -1802,7 +1805,7 @@
         </div>
     </div>
 
-    <div class="sheet-grappling">
+    <div class="sheet-grappling hidden">
         <div class="container-style" style="padding-bottom: 10px; margin-bottom:6px;">
     		<h3>Grapple Check</h3>
     		<p>As a main action, you can attempt to grapple a target within reach. <u>You and the target must make a contested physicality or agility trait roll,</u> and if you win you successfully grapple them. The creature doing the grappling is known as the grappler, and the target being grappled is unknown as the grappled target. <u>Any forced movement will cause any creature that wants to hold on to make a grip trait roll vs the TC of the shove.</u></p>
@@ -1831,7 +1834,7 @@
     	</div>
     </div>
     
-    <div class="sheet-struggles">
+    <div class="sheet-struggles hidden">
         <div style="width:45%;text-align:center;display:inline-block;margin-left:3%;vertical-align: top;">
             <div class="stylized-type" style="width:100%; padding-bottom: 10px; margin-bottom:6px; visibility:hidden;">
         	    <h4 style="margin:0px; margin-bottom:3px;">Consider this an easter egg</h4>
@@ -1861,7 +1864,6 @@
         	<textarea style="width:100%;" rows="18" name="attr_roleplay_triggers"></textarea>
         </div>
     </div>
-</div>
 
 <!-- Displays roll results in Roll20's chat -->
 <!-- Hidden on the character sheet inside Roll20, but displays oddly if this file is loaded as pure .html -->
@@ -2034,12 +2036,13 @@
 
 
 <script type="text/worker">
+    //TPTODO didn't realize I could do it like this, that woulda saved me some work. Rewrite everything like this
+
     const buttonlist = ["main","level","gear","cheatsheet","grappling","struggles"];
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
-            setAttrs({
-                sheetTab: button
-            });
+            buttonlist.forEach(sheet => $20(`.sheet-${sheet}`).addClass("hidden")); //TPTODO would be better to use a variable methinks
+            $20(".sheet-" + button).removeClass("hidden");
         });
     });
     
@@ -2049,13 +2052,13 @@
 
 
 
-
-
+    /* Turn this shit into a function TPTODO */
 
     /* Handles the left sidebar collapsible button */
     on('clicked:left_sidebar_view sheet:opened', (info) => {
         getAttrs(["left_sidebar_view_storage"], function(values) {
-            if(parseInt(values.left_sidebar_view_storage) === 1){
+            let val = parseInt(values.left_sidebar_view_storage);
+            if((val === 1 && info.triggerName !== "sheet:opened") || (val === 0 && info.triggerName == "sheet:opened")){
                 $20("#left_sidebar").addClass("collapsed");
                 $20("#left_sidebar_view").addClass("checked");
             } else {
@@ -2070,10 +2073,11 @@
         });
     });
 
-    /* Handles the character box collapsible buttons */
+    /* Handles the character box collapsible button */
     on('clicked:character_box_view_col sheet:opened', (info) => {
         getAttrs(["character_box_view_storage"], function(values) {
-            if(parseInt(values.character_box_view_storage) === 1){
+            let val = parseInt(values.character_box_view_storage);
+            if((val === 1 && info.triggerName !== "sheet:opened") || (val === 0 && info.triggerName == "sheet:opened")){
                 $20("#character_box").addClass("invis");
                 $20("#character_box_checkbox").addClass("checked");
                 $20("#character_box_collapsed").addClass("checked");
@@ -2085,6 +2089,26 @@
             if(info.triggerName !== "sheet:opened"){
                 setAttrs({
                     character_box_view_storage: (parseInt(values.character_box_view_storage) === 1 ? 0 : 1)
+                });
+            }
+        });
+    });
+
+    /* Handles the character box collapsible button */
+    on('clicked:loadout_view sheet:opened', (info) => {
+        getAttrs(["loadout_view_storage"], function(values) {
+            let val = parseInt(values.loadout_view_storage);
+            console.log(val);
+            if((val === 1 && info.triggerName !== "sheet:opened") || (val === 0 && info.triggerName == "sheet:opened")){
+                $20("#advan_and_mod_box").addClass("invis");
+                $20("#loadout_checkbox").addClass("checked");
+            } else {
+                $20("#advan_and_mod_box").removeClass("invis");
+                $20("#loadout_checkbox").removeClass("checked");
+            }
+            if(info.triggerName !== "sheet:opened"){
+                setAttrs({
+                    loadout_view_storage: (parseInt(values.loadout_view_storage) === 1 ? 0 : 1)
                 });
             }
         });
@@ -2235,13 +2259,6 @@
     
     on("change:detection_mod change:intuition_mod change:wilderness_mod change:convince_mod change:flair_mod change:performance_mod change:agility_mod change:dexterity_mod change:stealth_mod change:constitution_mod change:persistence_mod change:toughness_mod change:engineering_mod change:knowledge_mod change:magic_mod change:grip_mod change:physicality_mod change:presence_mod change:faith_mod change:interaction_mod change:willpower_mod sheet:opened", function() {  
         getAttrs(["detection_mod","intuition_mod","wilderness_mod","convince_mod","flair_mod","performance_mod","agility_mod","dexterity_mod","stealth_mod","constitution_mod","persistence_mod","toughness_mod","engineering_mod","knowledge_mod","magic_mod","grip_mod","physicality_mod","presence_mod","faith_mod","interaction_mod","willpower_mod"], function(values) {
-            console.log(parseInt(values.detection_mod) + parseInt(values.intuition_mod) + parseInt(values.wilderness_mod));
-            console.log(parseInt(values.convince_mod) + parseInt(values.flair_mod) + parseInt(values.performance_mod));
-            console.log(parseInt(values.agility_mod) + parseInt(values.dexterity_mod) + parseInt(values.stealth_mod));
-            console.log(parseInt(values.constitution_mod) + parseInt(values.persistence_mod) + parseInt(values.toughness_mod));
-            console.log(parseInt(values.engineering_mod) + parseInt(values.knowledge_mod) + parseInt(values.magic_mod));
-            console.log(parseInt(values.grip_mod) + parseInt(values.physicality_mod) + parseInt(values.presence_mod));
-            console.log(parseInt(values.faith_mod) + parseInt(values.interaction_mod) + parseInt(values.willpower_mod));
             let val = parseInt(values.detection_mod) + parseInt(values.intuition_mod) + parseInt(values.wilderness_mod) + parseInt(values.convince_mod) + parseInt(values.flair_mod) + parseInt(values.performance_mod) + parseInt(values.agility_mod) + parseInt(values.dexterity_mod) + parseInt(values.stealth_mod) + parseInt(values.constitution_mod) + parseInt(values.persistence_mod) + parseInt(values.toughness_mod) + parseInt(values.engineering_mod) + parseInt(values.knowledge_mod) + parseInt(values.magic_mod) + parseInt(values.grip_mod) + parseInt(values.physicality_mod) + parseInt(values.presence_mod) + parseInt(values.faith_mod) + parseInt(values.interaction_mod) + parseInt(values.willpower_mod)
             setAttrs({                            
                 "totaltrait": val
@@ -2280,13 +2297,13 @@
             setAttrs({                            
                 "detection_mod_ui": parseInt(values.detection_mod_lu)
             });
-            $20(".detection").removeClass("advantaged-trait");
-            $20(".detection").removeClass("disadvantaged-trait");
             if(parseInt(values.detection_mod) === 1){
                 $20(".detection").addClass("advantaged-trait");
+                $20(".detection").removeClass("disadvantaged-trait");
             }
             else if(parseInt(values.detection_mod) === -1){
                 $20(".detection").addClass("disadvantaged-trait");
+                $20(".detection").removeClass("advantaged-trait");
             }
         });
     });
@@ -2782,7 +2799,11 @@
         });
     });
     
-    
+
+
+      /*********/
+     /* ROLLS */
+    /*********/
     
     //Function to make a difficulty check
     const _makeDifficultyCheck = (difficultyCheck) => {
@@ -2809,11 +2830,6 @@
     on('clicked:soulroll', (info) => {
         _makeDifficultyCheck("soul");
     });
-    
-    
-    
-    
-    
     
     //Function to make a trait roll
     const _makeTraitRoll = (traitName) => {
@@ -2898,10 +2914,9 @@
         _makeTraitRoll("willpower");
     });
     
-    
     //Function to make a defense roll
     const _makeDefenseRoll = (defenseType) => {
-        getAttrs([defenseType + "_mod","shield_mod", "shield_tolerance_apply"], function(values) {
+        getAttrs([defenseType + "_mod"], function(values) {
             /* rollType, rollName, bonus, advantage, attackName, damageType, damage, critDamage */
             _makeRoll("defense", defenseType.charAt(0).toUpperCase() + defenseType.slice(1), parseInt(values[defenseType + "_mod"]), 0);
         });
@@ -2915,25 +2930,6 @@
     on('clicked:parry', (info) => {
         _makeDefenseRoll("parry");
     });
-    
-    
-    
-    /* no longer in use */
-    on('clicked:armor', (info) => {
-        getAttrs(["armor", "gmroll"], function(values) {
-            let armorVal = values.armor;
-            let gmrollVal = parseInt(values.gmroll);
-            startRoll(`&{template:r_non2d10_template} {{hide=[[${parseInt(gmrollVal)}d1]]}} {{roll=[[${armorVal}]]}}`, (results) => {
-                finishRoll(
-                    results.rollId,
-                    {
-                        roll: results.results.roll.result
-                    }
-                );
-            });
-        });
-    });
-    
     
     //Function to make an attack roll
     const _makeAttackRoll = (attackType) => {
@@ -2956,9 +2952,14 @@
     });
     
     
+
+      /*************/
+     /* MAKE ROLL */
+    /*************/
+
     //Function to make a dice roll
 	const _makeRoll = (rollType, rollName, bonus, advantage, attackName = null, damageType = null, damage = null, critDamage = null) => {
-	    getAttrs(["advan_and_mod_loadout"], function(loadout) {
+	    getAttrs(["advan_and_mod_loadout"], function(loadout) { //TPTODO put this into a variable
 	        let L = loadout.advan_and_mod_loadout;
     	    getAttrs(["traitadvan_" + L, "traitmod_" + L, "attackadvan_" + L, "attackmod_" + L, "defenseadvan_" + L, "defensemod_" + L, "difficultyadvan_" + L, "difficultymod_" + L, "damageadvan_" + L, "damagemod_" + L, "critmin_" + L, "gm_roll", "character_name"], function(values) {
     	        

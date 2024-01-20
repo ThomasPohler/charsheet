@@ -1,21 +1,24 @@
-  /********************/
- /* BACKGROUND COLOR */
-/********************/
+  /**************************/
+ /* DEFINE COLOR VARIABLES */
+/**************************/
 
-#dialog-window {
-    background-color: #F2F2F2;
+body {
+    /* These variables are not changed in dark mode: */
+    --color-accent: #0075FF;
+
+    /* These variables are changed in dark mode: */
+    --color-background: #F2F2F2;
+    --color-border: #3F3F3F;
+    --color-container: #E5E5E5;
+    --color-highlight: #B2B2B2;
+    --color-text: black;
 }
-body.sheet-darkmode #dialog-window {
-    background-color: #333333;
-}
-
-
-
-.tab-pane {
-    background-color: #F2F2F2;
-}
-body.sheet-darkmode .tab-pane {
-    background-color: #333333;
+body.sheet-darkmode {
+    --color-background: #333333;
+    --color-border: black;
+    --color-container: #1F1F1F;
+    --color-highlight: #4C4C4C;
+    --color-text: #E6E6E6;
 }
 
 
@@ -37,27 +40,50 @@ body.sheet-darkmode .tab-pane {
 
 
 
+.container-style {
+	border: 2px solid var(--color-border);
+	background-color: var(--color-container);
+	padding: 3px;
+	border-radius: 5px;
+	margin-bottom: 6px;
+    position: relative;
+}
+
+
+
+.hr {
+    background-color: var(--color-highlight);
+    height: 1px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.vr {
+    background-color: #666666;
+    height: 100%;
+    width: 1px;
+    margin: 0px auto;
+}
+
+
+
 button {
     width: 80px;
     height: 20px;
-	background-color: #D8D8D8;
-	border: 1px #3F3F3F solid;
+	background-color: #CCCCCC;
+	border: 1px var(--color-border) solid;
 	padding-bottom: 2px;
 	padding-top: 2px;
 	border-radius: 6px;
-    transition: all 0.3s, background-color 0s, border-color 0s;
+    transition: all 0.3s, background-color 0.3s, border-color 0s;
     overflow: hidden;
 }
 button:hover {
     transition: background-color 0.3s; /* TPTODO make the light and dark mode colors equal to you can have the background color transition */
-    background-color: #F2F2F2;
+    background-color: #D8D8D8;
 }
 button:active {
     transition: background-color 0.3s;
-    background-color: #E5E5E5;
-}
-body.sheet-darkmode button {
-    border-color: black;
+    background-color: #D8D8D8;
 }
 
 
@@ -67,106 +93,56 @@ button.checkbox {
     width: 12px !important;
     height: 12px !important;
     border-radius: 3px;
-    border: 1px #3F3F3F solid;
+    border: 1px var(--color-border) solid;
     padding: 0px;
     display: inline;
 }
-body.sheet-darkmode button.checkbox {
-    border-color: black;
-}
 button.checkbox.checked {
-    background-color: #0075FF !important;
-}
-
-
-div.single-line-holder {
-    display: flex;
-    flex-wrap: nowrap;
-    height: 28px;
-}
-div.single-line-holder > button {
-    margin-top: 1px;
+    background-color: var(--color-accent) !important;
 }
 
 
 
-.container-style {
-	border: 2px solid #666666;
-	background-color: #E5E5E5;
-	padding: 3px;
-	padding-left: 10px;
-	border-radius: 5px;
-	margin-bottom: 6px;
-    position: relative;
+span {
+    color: var(--color-text);
 }
-
-body.sheet-darkmode .container-style {
-    border-color: black;
-    background-color: #1F1F1F;
+button span {
+    color: black;
 }
 
 
 
-.hr {
-    background-color: #666666;
-    height: 1px;
-    margin-top: 8px;
-    margin-bottom: 8px;
+/* Controls the background color */
+#dialog-window {
+    background-color: var(--color-background) !important;
 }
-body.sheet-darkmode .hr {
-    background-color: #4C4C4C;
-}
-
-.vr {
-    background-color: #666666;
-    height: 50px;
-    width: 1px;
-    margin: 0px auto;
-}
-body.sheet-darkmode .vr {
-    background-color: #4C4C4C;
+.tab-pane {
+    background-color: var(--color-background);
 }
 
 
 
-.text-box,
-.minus-sign,
-.plus-sign {
-    display: none;
+/* This controls the color of the tabs above the character sheet */
+.nav.nav-tabs {
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+}
+body.sheet-darkmode .nav.nav-tabs {
+    background-color: var(--color-container);
+    border: 1px solid #5C5C5C;
+    border-top: 1px solid black;
+}
+.nav.nav-tabs li.active > a {
+    background-color: var(--color-background);
 }
 
-.sheet-abilitytexttoggle[value="1"] ~ textarea.text-box,
-.sheet-abilitytexttoggle[value="1"] ~ span.minus-sign {
-    display: block;
-}
-
-.sheet-abilitytexttoggle[value="0"] ~ span.plus-sign {
-    display: block;
-}
 
 
-
-
-
-  /**********/
- /* HEADER */
-/**********/
-
-.sheet-main,
-.sheet-level,
-.sheet-gear,
-.sheet-cheatsheet,
-.sheet-grappling,
-.sheet-struggles {
-    display: none;
-}
-.sheet-tabstoggle[value="main"] ~ div.sheet-main,
-.sheet-tabstoggle[value="level"] ~ div.sheet-level,
-.sheet-tabstoggle[value="gear"] ~ div.sheet-gear,
-.sheet-tabstoggle[value="cheatsheet"] ~ div.sheet-cheatsheet,
-.sheet-tabstoggle[value="grappling"] ~ div.sheet-grappling,
-.sheet-tabstoggle[value="struggles"] ~ div.sheet-struggles {
-    display: block;
+#tab_holder{
+    margin-bottom: 10px;
 }
 
 
@@ -180,13 +156,13 @@ body.sheet-darkmode .vr {
 /* MAIN DIV */
 
 .sheet-main #main_div {
-    margin-left: 172px;
     position: absolute;
+    left: 195px;
     width: 800px;
     transition: 0.3s;
 }
 .sheet-main #left_sidebar.collapsed ~ #main_div {
-    margin-left: 64px;
+    left: 94px;
 }
 
 
@@ -194,18 +170,13 @@ body.sheet-darkmode .vr {
 .sheet-main #title_holder {
     width: 800px;
     text-align: center;
-    margin-bottom: 6px;
 }
-
 .sheet-main #title {
     font-size: 26px;
     line-height: 25px;
     text-decoration-line: overline underline;
     margin-top: 5px;
-    color: #333;
-}
-body.sheet-darkmode .sheet-main #title {
-    color: #E6E6E6;
+    color: var(--color-text);
 }
 
 
@@ -216,32 +187,28 @@ body.sheet-darkmode .sheet-main #title {
     grid-template-rows: repeat(2, auto);
     padding: 3px 6px;
     position: relative;
-    transition: all 0.3s, opacity 0s, border-width 0.15s, background-color 0s, border-color 0s;
-    height: 100px;
+    transition: all 0.3s, opacity 0s, background-color 0s, border-color 0s;
+    height: 93px;
     overflow: hidden;
+    margin-top: 6px;
 }
-.sheet-main #character_box.invis {
+.sheet-main #character_box.invis { /* to get a smoother transition I need to put the grid in its own div */
     padding-top: 0px;
     padding-bottom: 0px;
-    border-top: 0px;
-    border-bottom: 0px;
     margin-bottom: 0px;
     height: 0px;
-    transition: all 0.3s, opacity 0.3s, border-width 0.3s, background-color 0s, border-color 0s;
+    transition: all 0.3s, opacity 0.3s, background-color 0s, border-color 0s;
     opacity: 0%;
+    margin-top: 2px;
 }
 .sheet-main #character_box input {
     width: 100%;
 }
 .sheet-main #character_box span {
     margin: 0px auto;
-    color: #333333;
     width: 1px;
     display: flex;
     justify-content: center;
-}
-body.sheet-darkmode .sheet-main #character_box span {
-    color: #E6E6E6;
 }
 
 .sheet-main #character_box_collapsed {
@@ -256,9 +223,17 @@ body.sheet-darkmode .sheet-main #character_box span {
 .sheet-main #character_box_collapsed input {
     position: relative;
     left: 6px;
-    bottom: 6px;
-    height:26px;
     width: 155px;
+}
+
+
+
+.sheet-main #loadout_collapsed {
+    position: absolute;
+    padding-left: 0px;
+    width: 23px;
+    transition: all 0.25s, opacity 0s, background-color 0s, border-color 0s;
+    left: 769px;
 }
 
 
@@ -286,14 +261,15 @@ body.sheet-darkmode .sheet-main #character_box span {
 .sidebar-small {
     height: 20px;
 }
-.sidebar-small > h4 {
+.sidebar-small > span {
     position: relative;
-    top: 4px;
+    top: 1px;
 }
 .sidebar-small > input {
     float: right;
-    margin-top: 3px;
-    margin-right: 3px;
+    position: relative;
+    bottom: 4px;
+    left: 3px;
 }
 .sidebar-small button.checkbox {
     margin-top: 3px;
@@ -303,7 +279,7 @@ body.sheet-darkmode .sheet-main #character_box span {
 }
 .sidebar-small button.checkbox.top-right {
     float: right;
-    margin-right: 3px;
+    right: 3px;
 }
 
 
@@ -337,7 +313,6 @@ body.sheet-darkmode input.advantaged-trait {
 
 .sheet-main #left_sidebar.collapsed > .sidebar-small, .sheet-main #left_sidebar.collapsed > .sidebar-normal {
     width: 46px;
-    padding-left: 5px;
 }
 
 .sheet-main #left_sidebar > div > h4 {
@@ -348,10 +323,6 @@ body.sheet-darkmode input.advantaged-trait {
 }
 .sheet-main #left_sidebar.collapsed > .sidebar-small > h4.collapsed {
     display: inline;
-}
-.sheet-main #left_sidebar.collapsed > .sidebar-normal > h4.collapsed {
-    position: relative;
-    right: 3px;
 }
 
 .sheet-main #left_sidebar .left-sidebar-input-holder {
@@ -383,10 +354,6 @@ body.sheet-darkmode input.advantaged-trait {
     padding-left: 4px;
 }
 
-.sheet-main #left_sidebar.collapsed .single-line-holder > button {
-    width: 30px;
-}
-
 .sheet-main #left_sidebar.collapsed button.advantaged-trait {
     background-color: #66CC66;
 }
@@ -407,7 +374,7 @@ body.sheet-darkmode input.advantaged-trait {
 
 .sheet-main #right_sidebar {
     position: absolute;
-    margin-left: 978px;
+    margin-left: 971px;
     transition: 0.3s;
 }
 .sheet-main #left_sidebar.collapsed ~ #right_sidebar {
@@ -433,33 +400,23 @@ body.sheet-darkmode input.advantaged-trait {
     display: block;
 }
 
-
-
-
-
-
-
-
-/* This controls the color of the tabs above the character sheet */
-.nav.nav-tabs {
-    background-color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-left: 1px solid #DDDDDD;
-    border-right: 1px solid #DDDDDD;
+div.trait-line-holder {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 28px;
+    padding-left: 4px; /* TPTODO slightly not correct */
+}
+div.trait-line-holder > button {
+    margin-top: 1px;
+}
+.sheet-main #left_sidebar.collapsed .trait-line-holder {
+    padding-left: 1px;
+}
+.sheet-main #left_sidebar.collapsed .trait-line-holder > button {
+    width: 30px;
 }
 
-body.sheet-darkmode .nav.nav-tabs {
-    background-color: #1F1F1F;
-    border-bottom: 1px solid #5C5C5C;
-    border-left: 1px solid #5C5C5C;
-    border-right: 1px solid #5C5C5C;
-    border-top: 1px solid black;
-}
 
-.nav.nav-tabs li.active > a {
-    background-color: #F2F2F2;
-}
 
 
 
@@ -553,6 +510,8 @@ div.sheet-template-container {
     display: grid;
     grid-template-columns: repeat(7, auto);
     grid-template-rows: repeat(4, auto);
+    height: 160px;
+    transition: all 0.3s, opacity 0s, background-color 0s, border-color 0s;
 }
 
 #advan_and_mod_box > div {
@@ -560,6 +519,16 @@ div.sheet-template-container {
     align-items: center;
     justify-content: center;
     border-right: 1px solid black;
+}
+
+#advan_and_mod_box.invis {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    height: 0px;
+    transition: all 0.3s, opacity 0.3s, background-color 0s, border-color 0s;
+    opacity: 0%;
+    margin-top: -4px;
 }
 
 .tolerance-box {
