@@ -3,8 +3,10 @@
 
 
 
+<!-- DEVELOPER NOTES: -->
 <!-- Variables are stored between sessions via the "name" attribute -->
-<!-- As of this writing, no direct JavaScript manipulation is allowed outside of manipulating classes and ".on()"-->
+<!-- As of this writing, no direct JavaScript manipulation is allowed outside of .addClass()/.removeClass()/.toggleClass()/.on() -->
+
 
 
 
@@ -14,11 +16,11 @@
 <!------------>
 
 <!-- Controls which page is currently active -->
-<input type="hidden" name="attr_sheetTab" value="main" />
+<input type="hidden" name="attr_sheet_tab" value="main" />
 <div id="tab_holder">
     <button type="action" name="act_main">Character</button>
     <button type="action" name="act_level">Level-Up</button>
-    <button type="action" name="act_gear">Gear</button>
+    <button type="action" name="act_equipment">Equipment</button>
     <button type="action" name="act_struggles">Roleplay</button>
     <button type="action" name="act_cheatsheet">Techniques</button>
     <button type="action" name="act_grappling">Grappling</button>
@@ -27,23 +29,30 @@
 
 
 
-    <!---------------->
-    <!-- PAGE: MAIN -->
-    <!---------------->
-    <div class="sheet-main"> <!-- TPTODO fix identation -->
+
+<!---------------->
+<!-- PAGE: MAIN -->
+<!---------------->
+<div class="sheet-main"> <!-- TPTODO fix identation -->
     
-    
-    
+
+
     <!-- Left sidebar div containing stats and traits -->
     <div id="left_sidebar">
+
+
+
         <!-- expands and collapses the sidebar -->
         <div class="container-style sidebar-small">
     		<h4 class="expanded">&#62;&#60;</h4> <!-- contains "><" -->
             <h4 class="collapsed">&#60;&#62;</h4> <!-- contains "<>" -->
-            <input type="hidden" name="attr_left_sidebar_view_storage" value="0"/>
+
+            <input type="hidden" name="attr_left_sidebar_view_storage" value="1"/>
             <button id="left_sidebar_view" class="top-right checkbox" type="action" name="act_left_sidebar_view"></button>
     	</div>
         
+
+
         <!-- controls the FD-only roll -->
         <div class="container-style sidebar-small">
     		<h4 class="expanded">FD-Only Roll</h4>
@@ -51,6 +60,8 @@
             <input type="checkbox" name="attr_gm_roll" value="0" style="top: 3px; margin-right: 6px;"> <!--TPTODO-->
     	</div>
         
+
+
         <!-- TRAIT: AWARENESS -->
     	<div class="container-style sidebar-normal">
     		<h4 class="expanded">Awareness</h4>
@@ -58,25 +69,27 @@
     		
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_detection_mod_ui" class="detection" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_detection_mod_ui" class="detection" step="1" readonly="true"/>
                 </div>
                 <button class="detection" type="action" name="act_detection">
                     <span class="expanded">Detection</span>
                     <span class="collapsed">DET</span>
                 </button>
             </div>
+
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_intuition_mod_ui" class="intuition" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_intuition_mod_ui" class="intuition" step="1" readonly="true"/>
                 </div>
                 <button class="intuition" type="action" name="act_intuition">
                     <span class="expanded">Intuition</span>
                     <span class="collapsed">INT</span>
                 </button>
     		</div>
+
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_wilderness_mod_ui" class="wilderness" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_wilderness_mod_ui" class="wilderness" step="1" readonly="true"/>
                 </div>
                 <button class="wilderness" type="action" name="act_wilderness">
                     <span class="expanded">Wilderness</span>
@@ -85,6 +98,8 @@
             </div>
     	</div>
         
+
+
         <!-- TRAIT: CHARISMA -->
     	<div class="container-style sidebar-normal">
     		<h4 class="expanded">Charisma</h4>
@@ -92,25 +107,27 @@
     		
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_convince_mod_ui" class="convince" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_convince_mod_ui" class="convince" step="1" readonly="true"/>
                 </div>
                 <button class="convince" type="action" name="act_convince">
                     <span class="expanded">Convince</span>
                     <span class="collapsed">CON</span>
                 </button>
     		</div>
+
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_flair_mod_ui" class="flair" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_flair_mod_ui" class="flair" step="1" readonly="true"/>
                 </div>
                 <button class="flair" type="action" name="act_flair">
                     <span class="expanded">Flair</span>
                     <span class="collapsed">FLA</span>
                 </button>
     		</div>
+
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_performance_mod_ui" class="performance" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_performance_mod_ui" class="performance" step="1" readonly="true"/>
                 </div>
                 <button class="performance" type="action" name="act_performance">
                     <span class="expanded">Performance</span>
@@ -119,6 +136,8 @@
             </div>
     	</div>
         
+
+        
         <!-- TRAIT: CONVICTION -->
         <div class="container-style sidebar-normal">
     		<h4 class="expanded">Conviction</h4>
@@ -126,25 +145,27 @@
     		
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_faith_mod_ui" class="faith" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_faith_mod_ui" class="faith" step="1" readonly="true"/>
                 </div>
                 <button class="faith" type="action" name="act_faith">
                     <span class="expanded">Faith</span>
                     <span class="collapsed">FAI</span>
                 </button>
     		</div>
+
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_interaction_mod_ui" class="interaction" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_interaction_mod_ui" class="interaction" step="1" readonly="true"/>
                 </div>
                 <button class="interaction" type="action" name="act_interaction">
                     <span class="expanded">Interaction</span>
                     <span class="collapsed">INT</span>
                 </button>
     		</div>
+
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_willpower_mod_ui" class="willpower" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_willpower_mod_ui" class="willpower" step="1" readonly="true"/>
                 </div>
                 <button class="willpower" type="action" name="act_willpower">
                     <span class="expanded">Motivation</span>
@@ -153,6 +174,8 @@
             </div>
     	</div>
         
+
+
         <!-- TRAIT: COORDINATION -->
     	<div class="container-style sidebar-normal">
     		<h4 class="expanded">Coordination</h4>
@@ -160,25 +183,27 @@
     		
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_agility_mod_ui" class="agility" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_agility_mod_ui" class="agility" step="1" readonly="true"/>
                 </div>
                 <button class="agility" type="action" name="act_agility">
                     <span class="expanded">Agility</span>
                     <span class="collapsed">AGI</span>
                 </button>
             </div>
+
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_dexterity_mod_ui" class="dexterity" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_dexterity_mod_ui" class="dexterity" step="1" readonly="true"/>
                 </div>
                 <button class="dexterity" type="action" name="act_dexterity">
                     <span class="expanded">Dexterity</span>
                     <span class="collapsed">DEX</span>
                 </button>
             </div>
+
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_stealth_mod_ui" class="stealth" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_stealth_mod_ui" class="stealth" step="1" readonly="true"/>
                 </div>
                 <button class="stealth" type="action" name="act_stealth">
                     <span class="expanded">Stealth</span>
@@ -187,6 +212,8 @@
             </div>
     	</div>
         
+
+
         <!-- TRAIT: ENDURANCE -->
     	<div class="container-style sidebar-normal">
     		<h4 class="expanded">Endurance</h4>
@@ -194,25 +221,27 @@
             
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_constitution_mod_ui" class="constitution" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_constitution_mod_ui" class="constitution" step="1" readonly="true"/>
                 </div>
                 <button class="constitution" type="action" name="act_constitution">
                     <span class="expanded">Constitution</span>
                     <span class="collapsed">CON</span>
                 </button>
             </div>
+
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_persistence_mod_ui" class="persistence" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_persistence_mod_ui" class="persistence" step="1" readonly="true"/>
                 </div>
                 <button class="persistence" type="action" name="act_persistence">
                     <span class="expanded">Persistence</span>
                     <span class="collapsed">PER</span>
                 </button>
             </div>
+
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_toughness_mod_ui" class="toughness" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_toughness_mod_ui" class="toughness" step="1" readonly="true"/>
                 </div>
                 <button class="toughness" type="action" name="act_toughness">
                     <span class="expanded">Durable</span>
@@ -221,6 +250,8 @@
             </div>
     	</div>
         
+
+
         <!-- TRAIT: INTELLIGENCE -->
     	<div class="container-style sidebar-normal">
     		<h4 class="expanded">Intelligence</h4>
@@ -228,25 +259,27 @@
             
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_engineering_mod_ui" class="engineering" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_engineering_mod_ui" class="engineering" step="1" readonly="true"/>
                 </div>
                 <button class="engineering" type="action" name="act_engineering">
                     <span class="expanded">Engineering</span>
                     <span class="collapsed">ENG</span>
                 </button>
             </div>
+
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_knowledge_mod_ui" class="knowledge" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_knowledge_mod_ui" class="knowledge" step="1" readonly="true"/>
                 </div>
                 <button class="knowledge" type="action" name="act_knowledge">
                     <span class="expanded">Knowledge</span>
                     <span class="collapsed">KNO</span>
                 </button>
             </div>
+
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_magic_mod_ui" class="magic" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_magic_mod_ui" class="magic" step="1" readonly="true"/>
                 </div>
                 <button class="magic" type="action" name="act_magic">
                     <span class="expanded">Magic</span>
@@ -255,6 +288,8 @@
             </div>
     	</div>
         
+
+
         <!-- TRAIT: POWER -->
     	<div class="container-style sidebar-normal">
     		<h4 class="expanded">Power</h4>
@@ -262,25 +297,27 @@
     		
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_grip_mod_ui" class="grip" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_grip_mod_ui" class="grip" step="1" readonly="true"/>
                 </div>
                 <button class="grip" type="action" name="act_grip">
                     <span class="expanded">Grip</span>
                     <span class="collapsed">GRI</span>
                 </button>
             </div>
+
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input type="number" name="attr_physicality_mod_ui" class="physicality" step="1" value="0" readonly="true"/>
+                    <input type="number" name="attr_physicality_mod_ui" class="physicality" step="1" readonly="true"/>
                 </div>
                 <button class="physicality" type="action" name="act_physicality">
                     <span class="expanded">Physicality</span>
                     <span class="collapsed">PHY</span>
                 </button>
             </div>
+
             <div class="trait-line-holder">
                 <div class="left-sidebar-input-holder">
-                    <input class="presence" type="number" name="attr_presence_mod_ui" class="presence" step="1" value="0" readonly="true"/>
+                    <input class="presence" type="number" name="attr_presence_mod_ui" class="presence" step="1" readonly="true"/>
                 </div>
                 <button type="action" name="act_presence">
                     <span class="expanded">Presence</span>
@@ -289,29 +326,32 @@
             </div>
     	</div>
     	
+
+
         <!-- LEFT SKILL CONTAINER -->
     	<div class="container-style skill-container">
-    		<input type="number" name="attr_melee_mod" step="1" value="3" readonly="true"/>
-    		<h4 class="expanded">Melee Bonus</h4>
-    		<br>
-    		<input type="number" name="attr_ranged_mod" step="1" value="3" readonly="true"/>
-    		<h4 class="expanded">Ranged Bonus</h4>
-    		<br>
-    		<input type="number" name="attr_thrown_mod" step="1" value="3" readonly="true"/>
-    		<h4 class="expanded">Thrown Bonus</h4>
-    		<br>
-    		<input type="number" name="attr_spell_mod" step="1" value="3" readonly="true"/>
-    		<h4 class="expanded">Spell Bonus</h4>
-    		<br>
+    		<input type="number" name="attr_melee_mod" readonly="true"/>
+    		<span class="expanded">Melee Bonus</h4>
+
+    		<input type="number" name="attr_ranged_mod" readonly="true"/>
+    		<span class="expanded">Ranged Bonus</h4>
+
+    		<input type="number" name="attr_thrown_mod" readonly="true"/>
+    		<span class="expanded">Thrown Bonus</h4>
+
+    		<input type="number" name="attr_spell_mod" readonly="true"/>
+    		<span class="expanded">Spell Bonus</h4>
+
             <div class="hr"></div>
-    		<input type="number" name="attr_block_mod" step="1" value="0" readonly="true"/>
-    		<h4 class="expanded">Block Bonus</h4>
-    		<br>
-    		<input type="number" name="attr_dodge_mod" step="1" value="0" readonly="true"/>
-    		<h4 class="expanded">Dodge Bonus</h4>
-    		<br>
-    		<input type="number" name="attr_parry_mod" step="1" value="0" readonly="true"/>
-    		<h4 class="expanded">Parry Bonus</h4>
+
+    		<input type="number" name="attr_block_mod" readonly="true"/>
+    		<span class="expanded">Block Bonus</h4>
+
+    		<input type="number" name="attr_dodge_mod" readonly="true"/>
+    		<span class="expanded">Dodge Bonus</h4>
+
+    		<input type="number" name="attr_parry_mod" readonly="true"/>
+    		<span class="expanded">Parry Bonus</h4>
     	</div>
     </div>
     
@@ -320,13 +360,13 @@
     <!-- Main div containing everything else -->
     <div id="main_div">
         
-        <input type="hidden" name="attr_character_box_view_storage" value="0" />
+        <input type="hidden" name="attr_character_box_view_storage" value="1" /> <!--TPTODO this is kinda backwards, or is it? 0 should be closed or open? -->
         <div id="character_box_collapsed" class="container-style sidebar-small">
             <button id="character_box_checkbox" class="checkbox" type="action" name="act_character_box_view_col"></button> <!--TPTODO remove "col"-->
             <input type="text" name="attr_character_name" />
         </div>
 
-        <input type="hidden" name="attr_loadout_view_storage" value="0" />
+        <input type="hidden" name="attr_loadout_view_storage" value="1" />
         <div id="loadout_collapsed" class="container-style sidebar-small">
             <button id="loadout_checkbox" class="checkbox" type="action" name="act_loadout_view"></button>
         </div>
@@ -1084,11 +1124,11 @@
     <!-- Div containing level-up information -->
     <div class="sheet-level hidden">
         <div style="display: grid; grid-template-columns: repeat(3, auto); width: 475px;">
-            <div class="container-style sidebar-small" style="padding-bottom: 10px; width: 250px;">
+            <div class="container-style sidebar-small" style="display: none; padding-bottom: 10px; width: 250px;">
         		<h4>Remaining Combat Essence</h4>
                 <input type="number" name="attr_totalessence_combat" value="0" style="float: right;" readonly="true">
         	</div>
-        	<div class="container-style sidebar-small" style="padding-bottom: 10px; width: 250px;">
+        	<div class="container-style sidebar-small" style="display: none; padding-bottom: 10px; width: 250px;">
         		<h4>Remaining Roleplay Essence</h4>
                 <input type="number" name="attr_totalessence_roleplay" value="0" style="float: right;" readonly="true">
         	</div>
@@ -2047,15 +2087,40 @@
     });
     
     
+
+
+    const _collapseFunction = (view, sheetOpened) => {
+        getAttrs([view + "_storage"], function(values) {
+            let tempVal = parseInt(values[view + "_storage"]);
+
+            if(!sheetOpened){
+                setAttrs({
+                    [view + "_storage"]: (tempVal === 1 ? 0 : 1)
+                });
+            }
+            return ((tempVal === 1 && !sheetOpened) || (tempVal === 0 && sheetOpened) ? 1 : 0);
+        });
+    }
+
+
+    on('clicked:left_sidebar_view', (info) => { //TPTODO singular sheet-opened
+        console.log(info);
+        let x = await _collapseFunction("left_sidebar_view", false);
+        if(x){
+            $20("#left_sidebar").addClass("collapsed");
+            $20("#left_sidebar_view").addClass("checked");
+        } else {
+            $20("#left_sidebar").removeClass("collapsed");
+            $20("#left_sidebar_view").removeClass("checked");
+        }
+    });
     
-
-
 
 
     /* Turn this shit into a function TPTODO */
 
     /* Handles the left sidebar collapsible button */
-    on('clicked:left_sidebar_view sheet:opened', (info) => {
+    /*on('clicked:left_sidebar_view sheet:opened', (info) => { //TPTODO
         getAttrs(["left_sidebar_view_storage"], function(values) {
             let val = parseInt(values.left_sidebar_view_storage);
             if((val === 1 && info.triggerName !== "sheet:opened") || (val === 0 && info.triggerName == "sheet:opened")){
@@ -2071,7 +2136,7 @@
                 });
             }
         });
-    });
+    });*/
 
     /* Handles the character box collapsible button */
     on('clicked:character_box_view_col sheet:opened', (info) => {
